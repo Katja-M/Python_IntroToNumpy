@@ -91,3 +91,18 @@ print(load_noheaders)
 print(load_noheaders.drop(load_noheaders.index[0:3], 0))
 # Deleting columns
 print(load_noheaders.drop(load_noheaders.columns[0:3], 1))
+
+# Adding a column or a row to a data frame
+
+# Updating dataframe with a new column
+# Each index gets (and needs) a value in the new column by .shape[0] = number of indexes * actual entry
+load_noheaders["New column"] = load_noheaders.shape[0]*['Hip Hip Hurra']
+# Data frame is updated
+print(load_noheaders)
+
+# Modifying a column
+load_noheaders['New column'] = load_noheaders['New column'] + ' Modified'
+print(load_noheaders)
+
+# Modifying and adding rows is possible by taking the transponent of the data frame,
+# then adding a new 'column' and after adding/modifying taking the transpose of the data frame again
